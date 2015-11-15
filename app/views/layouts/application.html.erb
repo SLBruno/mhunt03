@@ -15,7 +15,8 @@
         	<% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-right">
                             <li class="navbarfont"><%= link_to 'Enviar Video', new_video_path %></li>
-							<li class="navbarfont"><%= link_to 'Minha Conta', edit_user_registration_path %></li>
+                            <li class="navbarfont"><%= link_to 'Opções', edit_user_registration_path %></li>
+                            <li class="navbarfont"><%= link_to 'Meu Perfil', current_user %></li>
                             <li class="navbarfont"><%= link_to 'Deslogar', destroy_user_session_path, :method => :delete %></li>
 						</ul>
 					<% else -%>
