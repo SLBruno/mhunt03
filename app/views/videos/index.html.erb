@@ -2,8 +2,8 @@
   <div class="container">
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><%= link_to 'Últimos Vídeos', videos_path %></li>
-        <li role="presentation"><%= link_to 'Melhores da Semana', videos_path(:created_at => 30.days.ago) %></li>
-        <li role="presentation"><%= link_to 'Melhores do Mês', videos_path(:created_at => 7.days.ago) %></li>
+        <li role="presentation"><%= link_to 'Melhores da Semana', videos_path(:created_at => 7.days.ago) %></li>
+        <li role="presentation"><%= link_to 'Melhores do Mês', videos_path(:created_at => 30.days.ago) %></li>
         <li role="presentation"><%= link_to 'Melhores de Todos os Tempos', videos_path(:created_at => 9000.days.ago) %></li>
         </ul>
     <div id="player-wrapper"></div>
@@ -28,7 +28,7 @@
                             <h4 class="col-md-4 statsinfoindex">Likes
                             <p><%= video.likes %></ṕ></h4>
                             <h4 class="col-md-4 statsinfoindex">Dislikes
-                            <p><%= video.dislikes %></p></p>
+                                <p><%= video.dislikes %></p></p>
                 </div>
             </div>
                   <hr>

@@ -17,7 +17,9 @@ class VideosController < ApplicationController
   end
     
   def create
-  @video = Video.new(video_params)
+    @video = Video.new(video_params)
+    @video.user = current_user
+      
   if @video.save
     flash[:success] = 'Video added!'
     redirect_to root_url
@@ -54,6 +56,9 @@ private
         @video = Video.find(params[:id])
     end
     
-
+    def find_users_videos
+        @video = Video.find(params[:id])
+        @uservideo = @video.where(user: current_user)
+    end 
     
 end
