@@ -2,9 +2,10 @@
 <%= @user.email %>
 <%= image_tag current_user.gravatar_url %>
 <% @videos = Video.where(user_id: @userid) %>
+<% @usercomments = Comment.where(user_id:@userid) %>
+<% @allvideos = Video.all %>
 
-
- <div id="player-wrapper">
+<div id="player-wrapper">
 <% @videos.in_groups_of(4) do |group| %>
       <div class="row">
         <% group.each do |video| %>
@@ -34,7 +35,17 @@
 </div>
 </div>
 </div>
-                  <% end %> 
+<% end %> 
 <% end %>
-                  <% end %>
+<% end %>
 
+<% @usercomments.each do |comment| %> 
+<div class="col-sm-6 panel panel-default ">
+<% @currentvideoid = comment.video_id %> 
+<% @videofromcomment = Video.find(@currentvideoid) %>
+    <p><%= @videofromcomment.title %> </p>
+    <p><%= comment.video_id %> </p>
+    <p><%= comment.body %></p> 
+    <p><%= comment.created_at %></p>
+</div>
+<% end %>
