@@ -41,6 +41,12 @@ gem 'rails-observers'
 
 gem 'simple_form'
 
+<<<<<<< HEAD
+gem 'bootstrap-material-design'
+
+
+=======
+>>>>>>> master
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
